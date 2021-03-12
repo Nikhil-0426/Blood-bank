@@ -16,7 +16,7 @@
                 <li><a href="#">Compatibility</a></li>
                 <li><a href="#">Donor Registration</a></li>
                 <li><a href="#">Search A Donor</a></li>
-                <li><a href="#">Login</a></li>    
+                <li><a href="#">Login / Sign Up</a></li>    
             </ul>
             <div style="float: right;">
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
