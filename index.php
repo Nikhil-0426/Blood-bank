@@ -10,13 +10,13 @@
   <header>
     <nav>
         <div class="menu-icon"><span class="fas fa-bars"></span></div>
-        <div class="logo">Blood Donation</div>
+        <div class="logo">B+ A+ HERO+</div>
         <div class="nav-items">
             <li><a href="#">Home</a></li>
             <li><a href="#">Eligibility</a></li>
             <li><a href="#">Donor Registration</a></li>
             <li><a href="#">Search A Donor</a></li>
-            <li><a href="#">Sign Up / Sign In</a></li>
+            <li><a href="form.html">Sign Up / Sign In</a></li>
         </div>
         <div class="search-icon"><span class="fas fa-search"></span></div>
         <div class="cancel-icon"><span class="fas fa-times"></span></div>
@@ -35,7 +35,7 @@
             <div></div>
         </div>
     </div>
-    <section></section>
+    <section><p class="slide-text"></p></section>
     <div class="req" style="padding: 13px;"><h2><a href="blood_request.php"> POST YOUR REQUIREMENT </a></h2></div>
 
     <div class="container">
@@ -125,13 +125,26 @@
             'linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url("img/background1.jpg")',
             'linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url("img/background2.jpg")',
             'linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url("img/background4.png")',
-            'linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url("img/background5.jpg")',
+            'linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url("img/background5.jpg")'
         ]
-
+        
         const section = document.querySelector('section')
         const bg = images[Math.floor(Math.random() * 
         images.length)];
         section.style.backgroundImage = bg;
+    }
+
+    function changeTxt(){
+        const text = [
+            'be a saviour for someone be their life',
+            'Be A Hero',
+            'Save Life , Donate Blood'
+        ]
+        
+        const p = document.querySelector('.slide-text')
+        const t = text[Math.floor(Math.random() * text.length)];
+        
+        p.style.backgroundText = t;
     }
 
     setInterval(changeBg, 5000);
