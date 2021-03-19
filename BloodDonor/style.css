@@ -1,0 +1,255 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body{  
+    font-family: Calibri, Helvetica, sans-serif;  
+    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url("img/background6.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+nav{
+  width: 100%;
+  background: red;
+  display: flex;
+  padding: 0px 100px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  z-index: 999;
+  position: fixed;
+  margin-top: 0px;
+}
+
+nav .logo{
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+nav .nav-items{
+  display: flex;
+  flex: 1;
+  padding: 0 0 0 40px;
+}
+nav .nav-items li{
+  list-style: none;
+  padding: 0 15px;
+}
+nav .nav-items li a{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 15px 10px;
+  text-decoration: none;
+  font-weight: 900;
+}
+nav .nav-items li a:hover{
+    border-bottom: 5px solid rgb(148,0,0);
+
+    background: rgb(148,0,0);
+    background: linear-gradient(0deg, rgba(222,3,3,1) 0%, rgba(34,193,195,0) 43%);
+    color: white;
+}
+nav form{
+  display: flex;
+  height: 40px;
+  padding: 2px;
+  background: red;
+  min-width: 18%!important;
+  border-radius: 2px;
+  border: 1px solid rgba(155,155,155,0.2);
+}
+nav form .search-data{
+  width: 100%;
+  height: 100%;
+  padding: 0 10px;
+  color: #fff;
+  font-size: 17px;
+  border: none;
+  font-weight: 500;
+  background: none;
+}
+nav form button{
+  padding: 0 15px;
+  color: #fff;
+  font-size: 17px;
+  background: #ff3d00;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+nav form button:hover{
+  background: #e63600;
+}
+nav .menu-icon,
+nav .cancel-icon,
+nav .search-icon{
+  width: 40px;
+  text-align: center;
+  margin: 0 50px;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+}
+nav .menu-icon span,
+nav .cancel-icon,
+nav .search-icon{
+  display: none;
+}
+
+.form-label-left{
+    width:150px;
+}
+.form-line{
+    padding-top:12px;
+    padding-bottom:12px;
+}
+.form-label-right{
+    width:150px;
+}
+body, html{
+    margin:0;
+    padding:0;
+}
+
+.form-all{
+    margin:0px auto;
+    padding-top:0px;
+    width:690px;
+    color:#555 !important;
+    font-family:'Coda';
+    font-size:14px;
+}
+.form-radio-item label, .form-checkbox-item label, .form-grading-label, .form-header{
+    color: #FC0505;
+}
+
+.form-all {
+  font-family: "Verdana", sans-serif;
+}
+.form-all .qq-upload-button,
+.form-all .form-submit-button,
+.form-all .form-submit-reset,
+.form-all .form-submit-print {
+  font-family: "Verdana", sans-serif;
+}
+.form-all .form-pagebreak-back-container,
+.form-all .form-pagebreak-next-container {
+  font-family: "Verdana", sans-serif;
+}
+.form-header-group {
+  font-family: "Verdana", sans-serif;
+}
+.form-label {
+  font-family: "Verdana", sans-serif;
+}
+
+.form-label.form-label-auto {
+  
+display: inline-block;
+text-align: left;
+
+}
+
+.form-line {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.form-all {
+  max-width: 650px;
+  width: 100%;
+}
+
+.form-label.form-label-left,
+.form-label.form-label-right,
+.form-label.form-label-left.form-label-auto,
+.form-label.form-label-right.form-label-auto {
+  width: 120px;
+}
+
+.form-all {
+  font-size: 12pxpx
+}
+.form-all .qq-upload-button,
+.form-all .qq-upload-button,
+.form-all .form-submit-button,
+.form-all .form-submit-reset,
+.form-all .form-submit-print {
+  font-size: 12pxpx
+}
+.form-all .form-pagebreak-back-container,
+.form-all .form-pagebreak-next-container {
+  font-size: 12pxpx
+}
+
+.supernova .form-all, .form-all {
+  background-color: rgb(153, 153, 153);
+}
+
+.form-all {
+  color: black;
+}
+.form-header-group .form-header {
+  color: black;
+}
+.form-header-group .form-subHeader {
+  color: white;
+}
+.form-label-top,
+.form-label-left,
+.form-label-right,
+.form-html,
+.form-checkbox-item label,
+.form-radio-item label {
+  color: black;
+}
+.form-sub-label {
+  color: 1a1a25;
+  font-size: 15x !important;
+}
+
+.supernova {
+  background-color: undefined;
+}
+.supernova body {
+  background: transparent;
+}
+
+.form-textbox,
+.form-textarea,
+.form-dropdown,
+.form-radio-other-input,
+.form-checkbox-other-input,
+.form-captcha input,
+.form-spinner input {
+  background-color: undefined;
+}
+
+.supernova {
+  background-image: none;
+}
+#stage {
+  background-image: none;
+}
+
+  .form-all {
+    background-image: url("//www.jotform.com/images/brushed.png");
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-position: center top;
+  }
+
+.ie-8 .form-all:before { display: none; }
+.ie-8 {
+margin-top: auto;
+margin-top: initial;
+}

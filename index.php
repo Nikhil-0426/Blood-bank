@@ -14,7 +14,7 @@
         <div class="nav-items">
             <li><a href="#">Home</a></li>
             <li><a href="#">Eligibility</a></li>
-            <li><a href="#">Donor Registration</a></li>
+            <li><a href="BloodDonor/registration.html">Donor Registration</a></li>
             <li><a href="#">Search A Donor</a></li>
             <li><a href="form.html">Sign Up / Sign In</a></li>
         </div>
@@ -22,21 +22,21 @@
         <div class="cancel-icon"><span class="fas fa-times"></span></div>
     </nav>
   </header>
-  <body id="dvImage" style="height: 90vh; width: 100%">
+  <body>
     
     <div class="navigation">
         <div class="quotes">
             <h3>Donate your blood for a reason, let the reason be a life</h3>
         </div>
         <div class="image">
-            <img src="img/Logo.jpeg" alt="Logo" width="250px" height="200px">
+            <img src="img/logo2.jpeg" alt="Logo" width="250px" height="200px">
         </div>
         <div class="donarsActive">
             <div></div>
         </div>
     </div>
     <section><p class="slide-text"></p></section>
-    <div class="req" style="padding: 13px;"><h2><a href="blood_request.php"> POST YOUR REQUIREMENT </a></h2></div>
+    <div class="req" style="padding: 13px;"><h2><a href="BloodDonor/registration.html"> POST YOUR REQUIREMENT </a></h2></div>
 
     <div class="container">
         <div class="panel panel-default">
@@ -134,18 +134,18 @@
         section.style.backgroundImage = bg;
     }
 
-    function changeTxt(){
-        const text = [
-            'be a saviour for someone be their life',
-            'Be A Hero',
-            'Save Life , Donate Blood'
-        ]
+    // function changeTxt(){
+    //     const text = [
+    //         'be a saviour for someone be their life',
+    //         'Be A Hero',
+    //         'Save Life , Donate Blood'
+    //     ]
         
-        const p = document.querySelector('.slide-text')
-        const t = text[Math.floor(Math.random() * text.length)];
+    //     const p = document.querySelector('.slide-text')
+    //     const t = text[Math.floor(Math.random() * text.length)];
         
-        p.style.backgroundText = t;
-    }
+    //     p.style.backgroundText = t;
+    // }
 
     setInterval(changeBg, 5000);
   </script>

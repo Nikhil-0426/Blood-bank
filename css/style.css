@@ -45,8 +45,10 @@ nav .nav-items li a{
   font-weight: 900;
 }
 nav .nav-items li a:hover{
-    border-bottom: 5px solid white;
-    border-top: 5px solid white;
+    border-bottom: 5px solid rgb(148,0,0);
+
+    background: rgb(148,0,0);
+    background: linear-gradient(0deg, rgba(222,3,3,1) 0%, rgba(34,193,195,0) 43%);
     color: white;
 }
 nav form{
@@ -108,7 +110,8 @@ section{
 }
 
 .navigation{
-  background: linear-gradient(rgb(255, 0, 0), rgba(0, 0, 0, 0.7));
+  background: rgb(56,56,56);
+  background: linear-gradient(0deg, rgba(56,56,56,1) 0%, rgba(255,0,0,1) 65%);
   padding-top: 100px;
   display: flex;
   height: 400px;
@@ -157,7 +160,7 @@ section{
 }
 
 .req h2 a:hover{
-  color: red;
+  color: blue;
 }
 
 .container{

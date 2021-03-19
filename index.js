@@ -36,4 +36,4 @@
         images.length)];
         section.style.backgroundImage = bg;
     }
-    setInterval(changeBg, 5000);
+    setInterval(changeBg, 3000);
