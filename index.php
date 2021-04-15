@@ -14,7 +14,7 @@
         <div class="nav-items">
             <li><a href="#">Home</a></li>
             <li><a href="#">Eligibility</a></li>
-            <li><a href="BloodDonor/registration.html">Donor Registration</a></li>
+            <li><a href="BloodDonor/registration.php">Donor Registration</a></li>
             <li><a href="#">Search A Donor</a></li>
             <li><a href="form.html">Sign Up / Sign In</a></li>
         </div>

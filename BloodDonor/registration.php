@@ -1,3 +1,4 @@
+<?php include('server.php'); ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -42,7 +43,7 @@
 
   <body>
     <br><br><br><br>
-    <form class="jotform-form" action="https://submit.jotform.com/submit/210762803315449/" method="post" name="form_210762803315449" id="210762803315449" accept-charset="utf-8" autocomplete="on">
+    <form class="jotform-form" action="registration.php" method="post">
       <input type="hidden" name="formID" value="210762803315449" />
       <input type="hidden" id="JWTContainer" value="" />
       <input type="hidden" id="cardinalOrderNumber" value="" />
@@ -65,11 +66,11 @@
             <div id="cid_17" class="form-input">
               <div data-wrapper-react="true">
                 <span class="form-sub-label-container" style="vertical-align:top" data-input-type="first">
-                  <input type="text" id="first_17" name="q17_fullName17[first]" class="form-textbox" size="10" value="" data-component="first" aria-labelledby="label_17 sublabel_17_first" />
+                  <input type="text" id="first_17" name="Fname" class="form-textbox" size="10" value="" data-component="first" aria-labelledby="label_17 sublabel_17_first" />
                   <label class="form-sub-label" for="first_17" id="sublabel_17_first" style="min-height:13px" aria-hidden="false"> First Name </label>
                 </span>
                 <span class="form-sub-label-container" style="vertical-align:top" data-input-type="last">
-                  <input type="text" id="last_17" name="q17_fullName17[last]" class="form-textbox" size="15" value="" data-component="last" aria-labelledby="label_17 sublabel_17_last" />
+                  <input type="text" id="last_17" name="Lname" class="form-textbox" size="15" value="" data-component="last" aria-labelledby="label_17 sublabel_17_last" />
                   <label class="form-sub-label" for="last_17" id="sublabel_17_last" style="min-height:13px" aria-hidden="false"> Last Name </label>
                 </span>
               </div>
@@ -82,43 +83,15 @@
                 <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
                   <span class="form-address-line form-address-street-line jsTest-address-lineField">
                     <span class="form-sub-label-container" style="vertical-align:top">
-                      <input type="text" id="input_14_addr_line1" name="q14_address14[addr_line1]" class="form-textbox form-address-line" value="" data-component="address_line_1" aria-labelledby="label_14 sublabel_14_addr_line1" />
+                      <input type="text" id="input_14_addr_line1" name="Street_Address" class="form-textbox form-address-line" value="" data-component="address_line_1" aria-labelledby="label_14 sublabel_14_addr_line1" />
                       <label class="form-sub-label" for="input_14_addr_line1" id="sublabel_14_addr_line1" style="min-height:13px" aria-hidden="false"> Street Address </label>
                     </span>
                   </span>
                 </div>
                 <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
-                  <span class="form-address-line form-address-street-line jsTest-address-lineField">
-                    <span class="form-sub-label-container" style="vertical-align:top">
-                      <input type="text" id="input_14_addr_line2" name="q14_address14[addr_line2]" class="form-textbox form-address-line" value="" data-component="address_line_2" aria-labelledby="label_14 sublabel_14_addr_line2" />
-                      <label class="form-sub-label" for="input_14_addr_line2" id="sublabel_14_addr_line2" style="min-height:13px" aria-hidden="false"> Street Address Line 2 </label>
-                    </span>
-                  </span>
-                </div>
-                <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
-                  <span class="form-address-line form-address-city-line jsTest-address-lineField ">
-                    <span class="form-sub-label-container" style="vertical-align:top">
-                      <input type="text" id="input_14_city" name="q14_address14[city]" class="form-textbox form-address-city" value="" data-component="city" aria-labelledby="label_14 sublabel_14_city" />
-                      <label class="form-sub-label" for="input_14_city" id="sublabel_14_city" style="min-height:13px" aria-hidden="false"> City </label>
-                    </span>
-                  </span>
-                  <span class="form-address-line form-address-state-line jsTest-address-lineField ">
-                    <span class="form-sub-label-container" style="vertical-align:top">
-                      <input type="text" id="input_14_state" name="q14_address14[state]" class="form-textbox form-address-state" value="" data-component="state" aria-labelledby="label_14 sublabel_14_state" />
-                      <label class="form-sub-label" for="input_14_state" id="sublabel_14_state" style="min-height:13px" aria-hidden="false"> State / Province </label>
-                    </span>
-                  </span>
-                </div>
-                <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
-                  <span class="form-address-line form-address-zip-line jsTest-address-lineField ">
-                    <span class="form-sub-label-container" style="vertical-align:top">
-                      <input type="text" id="input_14_postal" name="q14_address14[postal]" class="form-textbox form-address-postal" value="" data-component="zip" aria-labelledby="label_14 sublabel_14_postal" />
-                      <label class="form-sub-label" for="input_14_postal" id="sublabel_14_postal" style="min-height:13px" aria-hidden="false"> Postal / Zip Code </label>
-                    </span>
-                  </span>
                   <span class="form-address-line form-address-country-line jsTest-address-lineField ">
                     <span class="form-sub-label-container" style="vertical-align:top">
-                      <select class="form-dropdown form-address-country noTranslate" name="q14_address14[country]" id="input_14_country" data-component="country" required="" aria-labelledby="label_14 sublabel_14_country">
+                      <select class="form-dropdown form-address-country noTranslate" name="City" id="input_14_country" data-component="country" required="" aria-labelledby="label_14 sublabel_14_country">
                         <option value=""> Please Select </option>
                         <option value="Margao"> Margao </option>
                         <option value="Vasco"> Vasco </option>
@@ -144,6 +117,20 @@
                       <label class="form-sub-label" for="input_14_country" id="sublabel_14_country" style="min-height:13px" aria-hidden="false"> City </label>
                     </span>
                   </span>
+                  <span class="form-address-line form-address-state-line jsTest-address-lineField ">
+                    <span class="form-sub-label-container" style="vertical-align:top">
+                      <input type="text" id="input_14_state" name="State" class="form-textbox form-address-state" value="" data-component="state" aria-labelledby="label_14 sublabel_14_state" />
+                      <label class="form-sub-label" for="input_14_state" id="sublabel_14_state" style="min-height:13px" aria-hidden="false"> State / Province </label>
+                    </span>
+                  </span>
+                </div>
+                <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
+                  <span class="form-address-line form-address-zip-line jsTest-address-lineField ">
+                    <span class="form-sub-label-container" style="vertical-align:top">
+                      <input type="text" id="input_14_postal" name="Pincode" class="form-textbox form-address-postal" value="" data-component="zip" aria-labelledby="label_14 sublabel_14_postal" />
+                      <label class="form-sub-label" for="input_14_postal" id="sublabel_14_postal" style="min-height:13px" aria-hidden="false"> Postal / Zip Code </label>
+                    </span>
+                  </span>
                 </div>
               </div>
             </div>
@@ -151,7 +138,7 @@
           <li class="form-line" data-type="control_dropdown" id="id_11">
             <label class="form-label form-label-left form-label-auto" id="label_11" for="input_11"> BLOOD GROUP </label>
             <div id="cid_11" class="form-input">
-              <select class="form-dropdown" id="input_11" name="q11_bloodGroup" style="width:150px" data-component="dropdown" aria-labelledby="label_11">
+              <select class="form-dropdown" id="input_11" name="Blood_Grp" style="width:150px" data-component="dropdown" aria-labelledby="label_11">
                 <option value="">  </option>
                 <option value="A+"> A+ </option>
                 <option value="AB+"> AB+ </option>
@@ -169,7 +156,7 @@
             <div id="cid_16" class="form-input">
               <div data-wrapper-react="true">
                 <span class="form-sub-label-container" style="vertical-align:top" data-input-type="phone">
-                  <input type="tel" id="input_16_phone" name="q16_phoneNumber16[phone]" class="form-textbox" value="+91" data-component="phone" aria-labelledby="label_16 sublabel_16_phone" />
+                  <input type="tel" id="input_16_phone" name="Phone_No" class="form-textbox" value="+91" data-component="phone" aria-labelledby="label_16 sublabel_16_phone" />
                   <label class="form-sub-label" for="input_16_phone" id="sublabel_16_phone" style="min-height:13px" aria-hidden="false"> Phone Number </label>
                 </span>
               </div>
@@ -178,7 +165,7 @@
           <li class="form-line" data-type="control_email" id="id_15">
             <label class="form-label form-label-left form-label-auto" id="label_15" for="input_15"> E-mail </label>
             <div id="cid_15" class="form-input">
-              <input type="email" id="input_15" name="q15_email15" class="form-textbox validate[Email]" size="30" value="" placeholder="ex: myname@example.com" data-component="email" aria-labelledby="label_15" />
+              <input type="email" id="input_15" name="Email" class="form-textbox validate[Email]" size="30" value="" placeholder="ex: myname@example.com" data-component="email" aria-labelledby="label_15" />
             </div>
           </li>
           <!-- <li class="form-line" data-type="control_textarea" id="id_13">
@@ -190,7 +177,7 @@
           <li class="form-line" data-type="control_button" id="id_2">
             <div id="cid_2" class="form-input-wide">
               <div style="margin-left:156px" data-align="auto" class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField">
-                <button id="input_2" type="submit" class="form-submit-button submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">
+                <button type="submit" class="form-submit-button submit-button jf-form-buttons jsTest-submitField" name="reg_donar">
                   Submit
                 </button>
               </div>
