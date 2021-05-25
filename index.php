@@ -1,10 +1,31 @@
+<?php 
+  session_start(); 
+
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['username']);
+  	header("location: index.php");
+  }
+?>
+
+<?php 
+    $db = mysqli_connect('localhost', 'root', '', 'blood_donar');
+    $query = "SELECT * FROM `donar_registration`;";
+    $data = mysqli_query($db, $query);
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </head>
   <header>
@@ -13,13 +34,24 @@
         <div class="logo">B+ A+ HERO+</div>
         <div class="nav-items">
             <li><a href="#">Home</a></li>
-            <li><a href="#">Eligibility</a></li>
+            <li><a href="Eligibility/eligibility.php">Eligibility/Compatibility</a></li>
             <li><a href="BloodDonor/registration.php">Donor Registration</a></li>
-            <li><a href="#">Search A Donor</a></li>
-            <li><a href="form.html">Sign Up / Sign In</a></li>
+            <li><a href="SearchDonar/Search.php">Search A Donor</a></li>
+            <?php if(!isset($_SESSION['username'])): ?>
+                <li><a href="Register/form.php">Login / Register</a></li>
+            <?php endif ?>
+            <div class="nav-sign">
+                <?php if(isset($_SESSION['username'])): ?>
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><strong><?php echo $_SESSION['username']; ?></strong></button>
+                <?php endif ?>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a href="index.php?logout='1'">Logout</a></li>
+            </div>
+        </div>
         </div>
         <div class="search-icon"><span class="fas fa-search"></span></div>
         <div class="cancel-icon"><span class="fas fa-times"></span></div>
+
     </nav>
   </header>
   <body>
@@ -42,7 +74,7 @@
         <div class="panel panel-default">
             <div class="panel-heading center">
                 <div class="row">
-                    <div class="col-md-12 center"><h2> FOLLOWING BLOOD REQUIRED </h2></div>
+                    <center><h2> FOLLOWING BLOOD REQUIRED </h2></center>
                 </div>
             </div>
             <table width="90%" height="400px">
@@ -54,41 +86,48 @@
                     <th class="col-md-2"><h4>REASON</h4></th>
                     <th class="col-md-2"><h4>CONTACT</h4></th>
                 </tr>
+                <?php 
+                    if($data->num_rows > 0){
+                        while($result = mysqli_fetch_assoc($data)){
+                ?>
                 <tr>
-                    <td class="col-md-3">Margoa</td>
-                    <td class="col-md-1 center">B+</td>
-                    <td class="col-md-1 center">60</td>
-                    <td class="col-md-3">Salgaokar Hospital</td>
-                    <td class="col-md-2">Blood Loss</td>
-                    <td class="col-md-2"><a href="requirement_details.php?details=4678">Contact</a></td>
+                    <td class="col-md-3"><?php echo $result['City']; ?></td>
+                    <td class="col-md-1 center"><?php echo $result['Blood_Grp']; ?></td>
+                    <td class="col-md-1 center"><?php echo $result['Pincode']; ?></td>
+                    <td class="col-md-3"><?php echo $result['Lname']; ?></td>
+                    <td class="col-md-2"><?php echo $result['Street_Address']; ?></td>
+                    <td class="col-md-2"><a href="requirement_details.php?details=4678"><?php echo $result['State']; ?></a></td>
                 </tr>
-                <tr>
-                    <td class="col-md-3">Panjim</td>
-                    <td class="col-md-1 center">O+</td>
-                    <td class="col-md-1 center">28</td>
-                    <td class="col-md-3">GMC Hospital</td>
-                    <td class="col-md-2">Dengue</td>
-                    <td class="col-md-2"><a href="requirement_details.php?details=4677">Contact</a></td>
-                </tr>
-
-                <tr>
-                    <td class="col-md-3">Vasco</td>
-                    <td class="col-md-1 center">AB+</td>
-                    <td class="col-md-1 center">20</td>
-                    <td class="col-md-3">Pai Hospital</td>
-                    <td class="col-md-2">Low Platelet Count</td>
-                    <td class="col-md-2"><a href="requirement_details.php?details=4676">Contact</a></td>
-                </tr>
+                <?php }} ?>
             </table>    
         </div>
     </div>
+    
+    <div class="container" style="padding: 30px;">
+        <h2>Blood Facts in General</h2>
+        <h6>&#9829;	There is no substitute for human Blood</h6>
+        <h6>&#9829;	Blood makes up about 7% of your body's weight.</h6>
+        <h6>&#9829;	An average adult has about 14 to 18 pints of Blood.</h6>
+        <h6>&#9829;	One standard unit or pint of Blood equals about two cups.</h6>
+        <h6>&#9829;	Blood carries oxygen and nutrients to all of the body.</h6>
+        <h6>&#9829;	Blood carries carbon dioxide and other waste products back to the lungs, kidneys and liver for disposal.</h6>
+        <h6>&#9829;	Blood fights against infection and helps heal wounds.</h6>
+        <h6>&#9829;	One unit of donated whole Blood is separated into components before use (red Blood cells, white Blood cells, plasma, platelets, etc.)</h6>
+        <h6>&#9829;	There are four main Blood types: A, B, AB and O.</h6>
+        <h6>&#9829;	Each Blood type is either Rh positive or negative.</h6>
+        <h6>&#9829;	There are about one billion red Blood cells in a few drops of whole Blood.</h6>
+        <h6>&#9829;	Red Blood cells live about 120 days in our bodies.</h6>
+        <h6>&#9829;	Red Blood cells can be stored under normal conditions for up to 42 days.</h6>
+        <h6>&#9829;	Frozen red Blood cells can be stored for ten years, and more.</h6>
+        <h6>&#9829;	Platelets must be used within five days.</h6>
+        <h6>&#9829;	Platelets are small Blood cells that assist in the process of Blood clotting helping those with leukemia and other cancers, controlling bleeding.</h6>
+        <h6>&#9829;	Plasma, the fourth major component of Blood, is a sticky, pale yellow fluid mixture of water, protein and salts. It is 95% water. The other 5% is made up of nutrients, proteins and hormones.</h6>
+        <h6>&#9829;	Blood Plasma constitutes 55% of the volume of human Blood.</h6>
+        <h6>&#9829;	Plasma helps maintain Blood pressure, carries Blood cells, nutrients, enzymes and hormones, and supplies critical proteins for Blood clotting and immunity.</h6>
+        <h6>&#9829;	Type AB plasma has been considered as the universal Blood plasma type, and therefore AB plasma is given to patients with any Blood type.</h6>
+        <h6>&#9829;	Frozen Plasma can be stored for up to one year.</h6>
+        <h6>&#9829;	Human Blood; red Blood cells, white Blood cells, plasma and platelets are made naturally by the body in the bone marrow.</h6>
 
-    <div class="panel-heading center"><h2> Benefits </h2></div>
-        <div class="panel-body justify" style="line-height:2;">
-            <li>Donating blood may reduce the risk of heart disease for men and stimulate the generation of red blood cells.</li>
-            <li>The amount of toxic chemicals (e.g. mercury, pesticides, fire retardants) circulating in the blood stream is reduced by the amount contained in given blood. </li>
-            <li>The good news is you can give blood again and again to help save more lives! </li>
-            <li>If you're a regular blood donor, you can give blood once in 12 weeks.</li>
     </div>
 
   </body>

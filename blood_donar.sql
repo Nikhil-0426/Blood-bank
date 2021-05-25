@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 15, 2021 at 07:36 PM
+-- Generation Time: May 25, 2021 at 09:19 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -36,19 +36,47 @@ CREATE TABLE `donar_registration` (
   `State` varchar(10) DEFAULT NULL,
   `Pincode` int(6) DEFAULT NULL,
   `Blood_Grp` varchar(4) DEFAULT NULL,
-  `Phone_No` int(13) DEFAULT NULL,
+  `Phone_No` varchar(13) DEFAULT NULL,
   `Email` varchar(50) DEFAULT NULL,
-  `Date` date NOT NULL DEFAULT current_timestamp()
+  `Date` date NOT NULL DEFAULT current_timestamp(),
+  `Time` time NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `donar_registration`
 --
 
-INSERT INTO `donar_registration` (`D_id`, `Fname`, `Lname`, `Street_Address`, `City`, `State`, `Pincode`, `Blood_Grp`, `Phone_No`, `Email`, `Date`) VALUES
-(1, 'Aniket', 'Sardesai', 'H.No 273 Neha Enterprices', 'Vasco', 'Goa', 403802, 'AB+', 2147483647, 'aniketsardesai44@gmail.com', '0000-00-00'),
-(2, 'Ajit', 'Sardesai', 'H.No 273 Neha Enterprices', 'Vasco', 'Goa', 403802, 'A+', 860074820, 'ajitsardesai22@gmail.com', '0000-00-00'),
-(3, 'Nikhil', 'Pinto', 'H.no 244 Salcett Nuvem', 'Margao', 'Goa', 403705, 'AB-', 880551510, 'nikhilpinto112@gmail.com', '0000-00-00');
+INSERT INTO `donar_registration` (`D_id`, `Fname`, `Lname`, `Street_Address`, `City`, `State`, `Pincode`, `Blood_Grp`, `Phone_No`, `Email`, `Date`, `Time`) VALUES
+(11, 'Deepak', 'Lotlikar', 'H No. 273 Near govt high school, New Vaddem', 'Fatorda', 'Goa', 403702, 'B+', '8390029029', 'deepaklotlikar12@gmail.com', '2021-05-25', '00:32:42'),
+(12, 'Prashant', 'Palyekar', 'Flat No. 399 Gajanan Apartment Near Panaji Bus Sta', 'Panaji', 'Goa', 403601, 'B-', '+919881558410', 'prashantpalyekar92@gmail.com', '2021-05-25', '00:39:07'),
+(13, 'Sujeet', 'Singh', 'Flat No. 102 Mahalaxmi Apartment Near Panaji Marke', 'Panaji', 'Goa', 403602, 'B-', '+919545065430', 'sujeetsingh10@yahoo.com', '2021-05-25', '00:44:41'),
+(14, 'Tanay', 'Candolkar', 'H No. 524 Vaddy', 'Candolim', 'Goa', 403401, 'B-', '+917507605390', 'tanycandolkar2@gmail.com', '2021-05-25', '01:03:45');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `First Name` text DEFAULT NULL,
+  `Last Name` text DEFAULT NULL,
+  `Phone Number` bigint(11) DEFAULT NULL,
+  `username` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `token` varchar(50) DEFAULT NULL,
+  `status` varchar(15) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `First Name`, `Last Name`, `Phone Number`, `username`, `email`, `password`, `token`, `status`) VALUES
+(38, 'Nikhil', 'Pinto', 9876543210, 'nikhil14', 'bhatshubham53@gmail.com', '$2y$10$dk9G8fHlo.0QlWKeAw2vjuwbckWgNeqSuGWLNAGhLSjhzS0BPMGgO', 'f402a57a6693d721e7b2e99654de10', 'active'),
+(39, 'Allen', 'Andra', 9604037883, 'allen02', 'andradeallenezi@gmail.com', '$2y$10$Rbk88495.RuSgkbLkyAs6.CK0NAMz3ppmRRJAhzXO5VEZkIAcMRzS', '1e34e10eb3a97ff3ba9f07387de012', 'inactive');
 
 --
 -- Indexes for dumped tables
@@ -61,6 +89,12 @@ ALTER TABLE `donar_registration`
   ADD PRIMARY KEY (`D_id`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -68,7 +102,13 @@ ALTER TABLE `donar_registration`
 -- AUTO_INCREMENT for table `donar_registration`
 --
 ALTER TABLE `donar_registration`
-  MODIFY `D_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `D_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

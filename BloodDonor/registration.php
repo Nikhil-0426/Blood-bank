@@ -34,7 +34,7 @@
             <li><a href="#">Eligibility</a></li>
             <li><a href="#">Donor Registration</a></li>
             <li><a href="#">Search A Donor</a></li>
-            <li><a href="../form.html">Sign Up / Sign In</a></li>
+            <li><a href="../Register/form.php">Sign Up / Sign In</a></li>
         </div>
         <div class="search-icon"><span class="fas fa-search"></span></div>
         <div class="cancel-icon"><span class="fas fa-times"></span></div>
@@ -92,31 +92,53 @@
                   <span class="form-address-line form-address-country-line jsTest-address-lineField ">
                     <span class="form-sub-label-container" style="vertical-align:top">
                       <select class="form-dropdown form-address-country noTranslate" name="City" id="input_14_country" data-component="country" required="" aria-labelledby="label_14 sublabel_14_country">
-                        <option value=""> Please Select </option>
-                        <option value="Margao"> Margao </option>
-                        <option value="Vasco"> Vasco </option>
-                        <option value="Ponda"> Ponda </option>
-                        <option value="Panjim"> Panjim </option>
-                        <option value="Mapusa"> Mapusa </option>
-                        <option value=" Siolim "> Siolim </option>
-                        <option value="Betul"> Betul </option>
-                        <option value="Mangoor"> Mangoor </option>
-                        <option value="Sada">Sada</option>
-                        <option value="Pilar"> Pilar </option>
-                        <option value="Asnoda"> Asnoda </option>
-                        <option value="Agassami"> Agassami </option>
-                        <option value="Benaulim"> Benaulim </option>
-                        <option value="Agonda"> Agonda </option>
-                        <option value="Cortalim"> Cortalim </option>
-                        <option value="Porvorim"> Porvorim </option>
-                        <option value="Pernem"> Pernem </option>
-                        <option value="Morjim"> Morjim </option>
-                       
-                        <option value="other"> Other </option>
+                        <option value="">Please Select City</option>
+                        <option value="Aldona"> Aldona</option>
+                        <option value="Bandora">Bandora</option>
+                        <option value="Benaulim">Benaulim</option>
+                        <option value="Bicholim">Bicholim</option>
+                        <option value="Calangute">Calangute</option>
+                        <option value="Canacona">Canacona</option>
+                        <option value="Candolim">Candolim</option>
+                        <option value="Carapur">Carapur</option>
+                        <option value="Chinchinim">Chinchinim</option>
+                        <option value="Colvale">Colvale</option>
+                        <option value="Cortalim">Cortalim</option>
+                        <option value="Cuncolim">Cuncolim</option>
+                        <option value="Curchorem Cacora">Curchorem Cacora</option>
+                        <option value="Curti">Curti</option>
+                        <option value="Davorlim">Davorlim</option>
+                        <option value="Fatorda">Fatorda</option>
+                        <option value="Goa Velha">Goa Velha</option>
+                        <option value="Guirim">Guirim</option>
+                        <option value="Mapusa">Mapusa</option>
+                        <option value="Margao">Margao</option>
+                        <option value="Mormugao">Mormugao</option>
+                        <option value="Pale">Pale</option>
+                        <option value="Panaji">Panaji</option>
+                        <option value="Parcem">Parcem</option>
+                        <option value="Penha-de-Franca">Penha-de-Franca</option>
+                        <option value="Pernem">Pernem</option>
+                        <option value="Ponda">Ponda</option>
+                        <option value="Quepem">Quepem</option>
+                        <option value="Queula">Queula</option>
+                        <option value="Raia">Raia</option>
+                        <option value="Reis Magos">Reis Magos</option>
+                        <option value="Saligao">Saligao</option>
+                        <option value="Sancoale">Sancoale</option>
+                        <option value="Sanguem">Sanguem</option>
+                        <option value="Sanquelim">Sanquelim</option>
+                        <option value="Sanvordem">Sanvordem</option>
+                        <option value="Sao Jose de Area">Sao Jose de Area</option>
+                        <option value="Siolim">Siolim</option>
+                        <option value="Socorro">Socorro</option>
+                        <option value="Valpoi">Valpoi</option>
+                        <option value="Varca">Varca</option>
                       </select>
                       <label class="form-sub-label" for="input_14_country" id="sublabel_14_country" style="min-height:13px" aria-hidden="false"> City </label>
                     </span>
                   </span>
+                  <br>
                   <span class="form-address-line form-address-state-line jsTest-address-lineField ">
                     <span class="form-sub-label-container" style="vertical-align:top">
                       <input type="text" id="input_14_state" name="State" class="form-textbox form-address-state" value="" data-component="state" aria-labelledby="label_14 sublabel_14_state" />
@@ -197,11 +219,37 @@
       </script>
       <input type="hidden" class="simple_spc" id="simple_spc" name="simple_spc" value="210762803315449" />
       <script type="text/javascript">
-      var all_spc = document.querySelectorAll("form[id='210762803315449'] .si" + "mple" + "_spc");
-    for (var i = 0; i < all_spc.length; i++)
-    {
-      all_spc[i].value = "210762803315449-210762803315449";
-    }
+          var all_spc = document.querySelectorAll("form[id='210762803315449'] .si" + "mple" + "_spc");
+          for (var i = 0; i < all_spc.length; i++)
+          {
+            all_spc[i].value = "210762803315449-210762803315449";
+          }
+      </script>
+      <script>
+        const menuBtn = document.querySelector(".menu-icon span");
+        const searchBtn = document.querySelector(".search-icon");
+        const cancelBtn = document.querySelector(".cancel-icon");
+        const items = document.querySelector(".nav-items");
+        const form = document.querySelector("form");
+        menuBtn.onclick = ()=>{
+          items.classList.add("active");
+          menuBtn.classList.add("hide");
+          searchBtn.classList.add("hide");
+          cancelBtn.classList.add("show");
+        }
+        cancelBtn.onclick = ()=>{
+          items.classList.remove("active");
+          menuBtn.classList.remove("hide");
+          searchBtn.classList.remove("hide");
+          cancelBtn.classList.remove("show");
+          form.classList.remove("active");
+          cancelBtn.style.color = "#ff3d00";
+        }
+        searchBtn.onclick = ()=>{
+          form.classList.add("active");
+          searchBtn.classList.add("hide");
+          cancelBtn.classList.add("show");
+        }
       </script>
     </form>
   </body>
