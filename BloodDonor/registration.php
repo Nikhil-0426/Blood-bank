@@ -1,28 +1,35 @@
+<?php 
+  session_start(); 
+
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['username']);
+  	header("location: index.php");
+  }
+?>
+
 <?php include('server.php'); ?>
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="alternate" type="application/json+oembed" href="https://www.jotform.com/oembed/?format=json&amp;url=https%3A%2F%2Fform.jotform.com%2F210762803315449" title="oEmbed Form">
     <link rel="alternate" type="text/xml+oembed" href="https://www.jotform.com/oembed/?format=xml&amp;url=https%3A%2F%2Fform.jotform.com%2F210762803315449" title="oEmbed Form">
-    <meta property="og:title" content="Blood Donation Form" >
-    <meta property="og:url" content="https://form.jotform.com/210762803315449" >
-    <meta property="og:description" content="Please click the link to complete this form." >
-    <meta name="slack-app-id" content="AHNMASS8M">
     <link rel="shortcut icon" href="https://cdn.jotfor.ms/favicon.ico">
     <link rel="canonical" href="https://form.jotform.com/210762803315449" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=1" />
-    <meta name="HandheldFriendly" content="true" />
     <title>Blood Donation Form</title>
     <link href="https://cdn.jotfor.ms/static/formCss.css?3.3.24019" rel="stylesheet" type="text/css" />
-    <link type="text/css" media="print" rel="stylesheet" href="https://cdn.jotfor.ms/css/printForm.css?3.3.24019" />
     <link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/themes/CSS/54be8f18700cc4e0368b4568.css?themeRevisionID=5d7ca1edd72e2373d866fe41"/>
-    <link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/css/styles/payment/payment_feature.css?3.3.24019" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/punycode/1.4.1/punycode.min.js"></script>
-    <script src="https://cdn.jotfor.ms/static/prototype.forms.js" type="text/javascript"></script>
     <script src="https://cdn.jotfor.ms/static/jotform.forms.js?3.3.24019" type="text/javascript"></script>
     <link rel="stylesheet" href="style.css">
-    <link type="text/css" rel="stylesheet" href="css/styles/nova.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    
   </head>
 
   <header>
@@ -31,13 +38,24 @@
         <div class="logo">B+ A+ HERO+</div>
         <div class="nav-items">
             <li><a href="../index.php">Home</a></li>
-            <li><a href="#">Eligibility</a></li>
+            <li><a href="../Eligibility/eligibility.php">Eligibility/Compatibility</a></li>
             <li><a href="#">Donor Registration</a></li>
-            <li><a href="#">Search A Donor</a></li>
-            <li><a href="../Register/form.php">Sign Up / Sign In</a></li>
+            <li><a href="../SearchDonar/Search.php">Search A Donor</a></li>
+            <?php if(!isset($_SESSION['username'])): ?>
+                <li><a href="../Register/form.php">Login / Register</a></li>
+            <?php endif ?>
+            <div class="nav-sign">
+                <?php if(isset($_SESSION['username'])): ?>
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><strong><?php echo $_SESSION['username']; ?></strong></button>
+                <?php endif ?>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li class="signin"><a href="../index.php?logout='1'">Logout</a></li>
+            </div>
+        </div>
         </div>
         <div class="search-icon"><span class="fas fa-search"></span></div>
         <div class="cancel-icon"><span class="fas fa-times"></span></div>
+
     </nav>
   </header>
 

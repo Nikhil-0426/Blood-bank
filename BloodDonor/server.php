@@ -53,7 +53,7 @@ if (isset($_POST['reg_donar'])) {
         $query = "INSERT INTO `donar_registration` (`D_id`, `Fname`, `Lname`, `Street_Address`, `City`, `State`, `Pincode`, `Blood_Grp`, `Phone_No`, `Email`) 
         VALUES ('', '$Fname', '$Lname', '$Street_Address', '$City', '$State', '$Pincode', '$Blood_Grp', '$Phone_No', '$Email');";
         mysqli_query($db, $query);
-        $_SESSION['success'] = "You are now logged in";
+
         header('location: ../index.php');
     }
 }

@@ -1,14 +1,23 @@
+<?php 
+  session_start(); 
+
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['username']);
+  	header("location: index.php");
+  }
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+<head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <title>Eligibility And Compatibility</title>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </head>
   <header>
@@ -17,9 +26,9 @@
         <div class="logo">B+ A+ HERO+</div>
         <div class="nav-items">
             <li><a href="../index.php">Home</a></li>
-            <li><a href="#">Eligibility</a></li>
+            <li><a href="#">Eligibility/Compatibility</a></li>
             <li><a href="../BloodDonor/registration.php">Donor Registration</a></li>
-            <li><a href="#">Search A Donor</a></li>
+            <li><a href="../SearchDonar/Search.php">Search A Donor</a></li>
             <?php if(!isset($_SESSION['username'])): ?>
                 <li><a href="../Register/form.php">Login / Register</a></li>
             <?php endif ?>
@@ -28,10 +37,11 @@
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><strong><?php echo $_SESSION['username']; ?></strong></button>
                 <?php endif ?>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <li><a href="index.php?logout='1'">Logout</a></li>
+                <li class="signin"><a href="../index.php?logout='1'">Logout</a></li>
             </div>
         </div>
         </div>
+        <div class="search-icon"><span class="fas fa-search"></span></div>
         <div class="cancel-icon"><span class="fas fa-times"></span></div>
 
     </nav>

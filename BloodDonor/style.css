@@ -1,107 +1,171 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
 *{
-  padding: 0%;
-  margin: 0%;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
-body {  
-font-family: Calibri, Helvetica, sans-serif;  
-background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../img/background6.png");
-background-position: center;
-background-size: cover;
-height: 90vh;
-text-align: center;
-} 
-
 nav{
-width: 100%;
-background: red;
-display: flex;
-padding: 0px 50px;
-flex-wrap: wrap;
-align-items: center;
-justify-content: space-between;
-height: 80px;
-z-index: 999;
-position: fixed;
-margin-top: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 80px;
+  padding: 22.5px;
+  width: 100%;
+  position: fixed;
+  background-color: red;
+  z-index: 11111;
+}
+
+.center {
+    text-align: center !important;
 }
 
 nav .logo{
-color: #fff;
-font-size: 30px;
-font-weight: 600;
-letter-spacing: -1px;
+  color: #fff;
+  display: flex;
+  float: left;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: -1px;
 }
 nav .nav-items{
-display: flex;
-flex: 1;
-padding: 0 0 0 40px;
+  align-items: center;
+  display: flex;
 }
 nav .nav-items li{
-list-style: none;
-padding: 0 15px;
+  list-style: none;
+  padding: 6px 15px;
 }
 nav .nav-items li a{
-color: #fff;
-font-size: 18px;
-font-weight: 500;
-padding: 15px 10px;
-text-decoration: none;
-font-weight: 900;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 900;
+  padding: 15px 10px;
+  text-decoration: none;
 }
 nav .nav-items li a:hover{
-  border-bottom: 5px solid rgb(148,0,0);
+    border-bottom: 5px solid rgb(148,0,0);
 
-  background: rgb(148,0,0);
-  background: linear-gradient(0deg, rgba(222,3,3,1) 0%, rgba(34,193,195,0) 43%);
-  color: white;
+    background: rgb(148,0,0);
+    background: linear-gradient(0deg, rgba(222,3,3,1) 0%, rgba(34,193,195,0) 43%);
+    color: white;
 }
+
+.btn-secondary{
+  font-weight: 900;
+}
+
+nav .nav-items .signin a{
+  color: red;
+  font-size: 15px;
+  padding: 0px 0px;
+  text-decoration: none;
+  font-weight: 900;
+}
+
+nav .nav-items .signin a:hover{
+  border-bottom: none;
+  background: none;
+  color: blue;
+}
+
 nav form{
-display: flex;
-height: 40px;
-padding: 2px;
-background: red;
-min-width: 18%!important;
-border-radius: 2px;
-border: 1px solid rgba(155,155,155,0.2);
+  display: flex;
+  height: 40px;
+  padding: 2px;
+  background: red;
+  min-width: 18%!important;
+  border-radius: 2px;
+  border: 1px solid rgba(155,155,155,0.2);
 }
 nav form .search-data{
-width: 100%;
-height: 100%;
-padding: 0 10px;
-color: #fff;
-font-size: 17px;
-border: none;
-font-weight: 500;
-background: none;
+  width: 100%;
+  height: 100%;
+  padding: 0 10px;
+  color: #fff;
+  font-size: 17px;
+  border: none;
+  font-weight: 500;
+  background: none;
 }
 nav form button{
-padding: 0 15px;
-color: #fff;
-font-size: 17px;
-background: #ff3d00;
-border: none;
-border-radius: 2px;
-cursor: pointer;
+  padding: 0 15px;
+  color: #fff;
+  font-size: 17px;
+  background: #ff3d00;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
 }
 nav form button:hover{
-background: #e63600;
+  background: #e63600;
 }
 nav .menu-icon,
 nav .cancel-icon,
 nav .search-icon{
-width: 40px;
-text-align: center;
-margin: 0 50px;
-font-size: 18px;
-color: #fff;
-cursor: pointer;
-display: none;
+  width: 40px;
+  text-align: center;
+  margin: 0 50px;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  display: none;
 }
 nav .menu-icon span,
 nav .cancel-icon,
 nav .search-icon{
-display: none;
+  display: none;
+}
+
+section{
+  background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(img/background1.jpg);
+  top: 100px;
+  left: 0%;
+  width: 100%;
+  height: 90vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.navigation{
+  background: rgb(56,56,56);
+  background: linear-gradient(0deg, rgba(56,56,56,1) 0%, rgba(255,0,0,1) 65%);
+  padding-top: 100px;
+  display: flex;
+  height: 400px;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-sign li{
+  list-style: none;
+}
+
+.nav-sign button{
+  color: white; 
+  font-size: 15px;
+  font-weight: 900;
+  background-color: transparent;
+  border: transparent;
+}
+
+.nav-sign button:hover{
+  background-color: transparent;
+  border: transparent;
+}
+
+.nav-sign li a{
+  color: red;
+  font-size: 15px;
+  text-decoration: none;
+  padding: 30px 20px;
+}
+
+.nav-sign li a:hover{
+  color: red;
 }
 
 @media (max-width: 1245px) {
@@ -114,7 +178,6 @@ display: none;
     padding: 0px;
   }
   nav .logo{
-    flex: 2;
     text-align: center;
   }
   .nav-sign{

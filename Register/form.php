@@ -34,10 +34,10 @@
   </header>  
   <body>    
     <br><br><br><br><br><br><br><br><br><br>
-    <center> <h1><b><a style="color: white; font-size: 50px; text-decoration: none;" href="index.php">Login</a></b>  </h1> </center>   
+    <center> <h1><b><a style="color: white; font-size: 30px; text-decoration: none;" href="index.php">Login</a></b>  </h1> </center>   
     <form method="post" action="form.php">  
         <div>
-            <p class="bg-success text-white px-4" style="font-size: 15px"><?php
+            <p class="bg-primary text-white px-4" style="font-size: 15px"><?php
                 include('errors.php');
                 if(isset($_SESSION['msg'])){
                     echo $_SESSION['msg'];
@@ -54,10 +54,6 @@
           <div class="input-group">
             <label>Password : </label>   
             <input type="password" placeholder="Enter Password" name="password" required>  
-          </div>
-
-          <div class="cookies">
-            <input type="checkbox" name="RememberMe"> &nbsp;&nbsp; Remember Me
           </div>
       
           <center>

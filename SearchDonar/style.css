@@ -12,17 +12,22 @@ nav{
   flex-wrap: wrap;
   align-items: center;
   height: 80px;
-  padding: 0 50px;
+  padding: 22.5px;
   width: 100%;
   position: fixed;
   background-color: red;
-  overflow: hidden;  
   z-index: 11111;
+}
+
+.center {
+    text-align: center !important;
 }
 
 nav .logo{
   color: #fff;
-  font-size: 30px;
+  display: flex;
+  float: left;
+  font-size: 25px;
   font-weight: 600;
   letter-spacing: -1px;
 }
@@ -32,15 +37,14 @@ nav .nav-items{
 }
 nav .nav-items li{
   list-style: none;
-  padding: 0 15px;
+  padding: 6px 15px;
 }
 nav .nav-items li a{
   color: #fff;
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 900;
   padding: 15px 10px;
   text-decoration: none;
-  font-weight: 900;
 }
 nav .nav-items li a:hover{
     border-bottom: 5px solid rgb(148,0,0);
@@ -49,6 +53,25 @@ nav .nav-items li a:hover{
     background: linear-gradient(0deg, rgba(222,3,3,1) 0%, rgba(34,193,195,0) 43%);
     color: white;
 }
+
+.btn-secondary{
+  font-weight: 900;
+}
+
+nav .nav-items .signin a{
+  color: red;
+  font-size: 15px;
+  padding: 0px 0px;
+  text-decoration: none;
+  font-weight: 900;
+}
+
+nav .nav-items .signin a:hover{
+  border-bottom: none;
+  background: none;
+  color: blue;
+}
+
 nav form{
   display: flex;
   height: 40px;
@@ -97,6 +120,16 @@ nav .search-icon{
   display: none;
 }
 
+.navigation{
+  background: rgb(56,56,56);
+  background: linear-gradient(0deg, rgba(56,56,56,1) 0%, rgba(255,0,0,1) 65%);
+  padding-top: 100px;
+  display: flex;
+  height: 400px;
+  justify-content: center;
+  align-items: center;
+}
+
 .nav-sign li{
   list-style: none;
 }
@@ -104,6 +137,7 @@ nav .search-icon{
 .nav-sign button{
   color: white; 
   font-size: 15px;
+  font-weight: 900;
   background-color: transparent;
   border: transparent;
 }
@@ -134,7 +168,6 @@ nav .search-icon{
     padding: 0px;
   }
   nav .logo{
-    flex: 2;
     text-align: center;
   }
   .nav-sign{
@@ -279,7 +312,6 @@ nav .logo.space{
 }
 
 
-
 /* .form-control {
     display: block;
     height: 34px;
@@ -315,4 +347,84 @@ nav .logo.space{
 
 .center{
   text-align: center;
+}
+
+.required_blood{
+  max-width: 80%;
+  margin: 50px auto;
+  position: relative;
+  box-shadow: 0 10px 30px 0px rgba(0,0,0,0.1);
+  padding: 30px;
+}
+
+.required_blood .title{
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 2em;
+  line-height: 48px;
+  padding-bottom: 20px;
+  color: #5543ca;
+  background: linear-gradient(to right, #f4524d 0%, #5543ca 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.blood-form .form-field{
+  position: relative;
+  margin: 32px 0;
+}
+
+.blood-form .input-text{
+  display: block;
+  width: 100%;
+  height: 36px;
+  border-width: 0 0 2px 0;
+  border-color: #5543ca;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+}
+
+.blood-form .input-text:focus + .label,
+.blood-form .input-text.not-empty + .label{
+  transform: translateY(-5px);
+}
+.blood-form .input-text:focus{
+  outline: none;
+}
+
+.blood-form .label{
+  position: absolute;
+  bottom: 29px;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #5543ca;
+  cursor: text;
+  transition: transform 0.2s ease-in-out;
+  text-transform: capitalize;
+}
+
+.blood-form .select{
+  position: relative;
+  font-size: 18px;
+  font-weight: 400;
+  color: #5543ca;
+  transition: transform 0.2s ease-in-out;
+  text-transform: capitalize;
+}
+
+.blood-form .submit-btn{
+  position: absolute;
+  display: inline-block;
+  background-image: linear-gradient(125deg, #a72879, #064497);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 16px;
+  padding: 8px 16px;
+  border: none;
+  width: 200px;
+  cursor: pointer;
 }

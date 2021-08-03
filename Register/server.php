@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $errors = array();
 
 $database = mysqli_connect('localhost', 'root', '', 'blood_donar');
@@ -167,7 +169,7 @@ if(isset($_POST['rec_over'])){
       
       if (empty($password_1)) { array_push($errors, "Password is required"); }
       if ($password_1 != $password_2) {
-      array_push($errors, "The two passwords do not match");
+        array_push($errors, "The two passwords do not match");
       }
   
       if (count($errors) == 0) {

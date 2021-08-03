@@ -30,7 +30,7 @@
   </header>  
   <body>    
     <br><br><br><br><br><br><br><br><br><br>
-    <center> <h1><b><a style="color: white; font-size: 50px; text-decoration: none;" href="index.php">Sign Up</a></b>  </h1> </center>   
+    <center> <h1><b><a style="color: white; font-size: 30px; text-decoration: none;" href="index.php">Sign Up</a></b>  </h1> </center>   
     <form action="signup.php" method="post">  
         <?php include('errors.php'); ?>
         <div class="container">
