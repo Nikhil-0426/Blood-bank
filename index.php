@@ -65,7 +65,10 @@ $data = mysqli_query($db, $query);
             <img src="img/logo2.jpeg" alt="Logo" width="250px" height="200px">
         </div>
         <div class="donarsActive">
-            <div></div>
+            <div><br><br>
+                <h6 style="color: white;">Active Donors</h6>
+                <h3 style="color: white;" id="number1" class="number"></h3>
+            </div>
         </div>
     </div>
     <section>
@@ -291,6 +294,18 @@ $data = mysqli_query($db, $query);
     // }
 
     setInterval(changeBg, 5000);
+
+    var project = setInterval(projectDone, 10)
+
+    let count1 = 1;
+
+    function projectDone() {
+        count1++
+        document.querySelector("#number1").innerHTML = count1
+        if (count1 == 15) {
+            clearInterval(project)
+        }
+    }
 </script>
 
 </html>
